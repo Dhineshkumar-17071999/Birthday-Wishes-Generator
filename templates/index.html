@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename = 'style.css') }}">
+        <title>FREE Birthday Wish Generator</title>
+        <h2>Birthday Wishes Generator</h2>
+    </head>
+    <body>
+        <form id="myForm" action="{{ url_for('submit') }}" method="POST">
+            <label for="name" >Enter the name:</label>
+            <input type="text" id="name" name="name" placeholder = "Enter the name">
+            Choose your relationship :
+            <select name="my_dropdown" >
+                <option value="">Who is the greeting for?</option>
+                <option value="Friend">Friend</option>
+                <option value="Mother">Mother</option>
+                <option value="Father">Father</option>
+                <option value="Son">Son</option>
+                <option value="Daughter">Daughter</option>
+                <option value="Grandfather">Grandfather</option>
+                <option value="Grandmother">Grandmother</option>
+                <option value="Sister">Sister</option>
+                <option value="Brother">Brother</option>
+                <option value="Wife">Wife</option>
+                <option value="Husband">Husband</option>
+                <option value="Partner">Partner</option>
+                <option value="Uncle">Uncle</option>
+              </select>
+              Wishes Type :
+              <select name="wish_type">
+                <option value="">Choose the type</option>
+                <option value="Funny">Funny</option>
+                <option value="Inspirational">Inspirational</option>
+                <option value="Cute">Cute</option>
+                <option value="Sweet">Sweet</option>
+              </select>              
+            <input type="submit" value="Submit">
+        </form>
+        <form id="result">
+            <p>{{ command }} <b>{{ selected_value }} {{ name }}</b>{{ comma }} {{ wish }}</p>             
+        </form>
+    </body>
+</html>
